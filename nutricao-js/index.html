@@ -6,6 +6,7 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/validacao.css">
 
 	</head>
 	<body>
@@ -69,7 +70,30 @@
 						</tr>
 					</tbody>
 				</table>
+			</section>
 
+			<section>
+				<h2>Adicionar novo paciente</h2>
+				<form>
+					<div class="grupo">
+						<label for="nome">Nome:</label>
+						<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo">
+					</div>
+					<div class="grupo">
+						<label for="peso">Peso:</label>
+						<input id="peso" name="nome" type="text" placeholder="digite o peso do seu paciente aqui" class="campo">
+					</div>
+					<div class="grupo">
+						<lavel for="altura">Altura:</lavel>
+						<input id="altura" name="altura" type="text" placeholder="digite a altura do paciente aqui" class="campo">
+					</div>
+					<div class="grupo">
+						<label for="gordura">% de gordura:</label>
+						<input id="gordura" type="text" placeholder="digite a porcentagem de gordura do paciente aqui" class="campo">
+					</div>
+
+					<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+				</form>
 			</section>
 		</main>
 

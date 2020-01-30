@@ -1,6 +1,10 @@
 var tituloDoIndex = document.querySelector("h1");
 tituloDoIndex.textContent = "Aparecida Nutricionista";
 
+tituloDoIndex.addEventListener("click", function(){
+    console.log("olha só posso chamar uma função anonima");
+});
+
 tituloDoIndex.addEventListener("click", mostraMensagem);
 function mostraMensagem(){
     console.log("Ola, eu fui clicado :D");
@@ -44,6 +48,10 @@ for(var i = 0; i < pacientes.length; i++){
     }
 }
 
+var botaoAdicionar  = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function(){
+    event.preventDefault();
+});
 
 
 console.log(tdImc.textContent);

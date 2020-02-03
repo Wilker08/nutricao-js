@@ -1,10 +1,6 @@
 var tituloDoIndex = document.querySelector("h1");
 tituloDoIndex.textContent = "Aparecida Nutricionista";
 
-tituloDoIndex.addEventListener("click", function(){
-    console.log("olha só posso chamar uma função anonima");
-});
-
 tituloDoIndex.addEventListener("click", mostraMensagem);
 function mostraMensagem(){
     console.log("Ola, eu fui clicado :D");
@@ -16,6 +12,9 @@ for(var i = 0; i < pacientes.length; i++){
     
     console.log(pacientes[i]);
     var paciente = pacientes[i];
+
+    var tdNome = paciente.querySelector(".info-nome");
+    var nome = tdNome.textContent;
 
     var tdPeso =  paciente.querySelector(".info-peso");
     var peso = tdPeso.textContent;
@@ -49,10 +48,41 @@ for(var i = 0; i < pacientes.length; i++){
 }
 
 var botaoAdicionar  = document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener("click", function(){
+botaoAdicionar.addEventListener("click", function(event){
     event.preventDefault();
-});
 
+    // captura as informações do formulario para criar um novo paciente
+    var form = document.querySelector("#form-adiciona");
+    var nome = form.nome.value;
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+
+    // cria tr
+    var pacienteTr = document.createElement("tr");
+
+    // cria td
+    var nomeTd = document.createElement("td");
+    var pesoTd = document.createElement("td");
+    var alturaTd = document.createElement("td");
+    var gorduraTd = document.createElement("td");
+    var imcTd = document.createElement("td");
+
+    // adicionando os dados capturados do form-adiciona
+    nomeTd.textContent = nome;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent = gordura;
+
+    // adicionando os td's como filhos de tr
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+});
 
 console.log(tdImc.textContent);
 

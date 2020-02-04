@@ -42,12 +42,12 @@ for(var i = 0; i < pacientes.length; i++){
     }
 
     if(pesoEhValido && alturaEhValido){
-        var imc = peso / (altura * altura); // 100 / 2.0 x 2.0 = 100 / 4 =>>>> 25
-        tdImc.textContent = imc.toFixed(2);
+        var imc = calculaImc(peso, altura);
+        tdImc.textContent = imc;
     }
 }
-console.log(tdImc.textContent);
 
+//console.log(tdImc.textContent);
 //console.log(paciente.textContent);
 //console.log(peso);
 //console.log(altura);
